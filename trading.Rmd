@@ -1,0 +1,30 @@
+---
+title: "Bitcoin Trading Indicators"
+output: html_notebook
+---
+
+Create Bitcoin indicators for trading.
+
+
+
+```{r}
+library(coinmarketcapr)
+```
+
+
+Setup key
+
+```{r}
+key <- 'c3c0cb59-d8c8-4e30-a874-7eee4dcdacb1'
+
+coinmarketcapr::setup(key)
+```
+
+
+
+Get crypto listings
+
+```{r}
+cryptos <- get_crypto_listings(limit = 50)
+```
+
