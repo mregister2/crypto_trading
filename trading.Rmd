@@ -6,25 +6,29 @@ output: html_notebook
 Create Bitcoin indicators for trading.
 
 
-
+Set options and load packages
 ```{r}
-library(coinmarketcapr)
-```
+options(scipen = 999, digits = 4)
 
-
-Setup key
-
-```{r}
-key <- 'c3c0cb59-d8c8-4e30-a874-7eee4dcdacb1'
-
-coinmarketcapr::setup(key)
+library(tidyverse)
+library(tseries)
+library(TTR)
 ```
 
 
 
-Get crypto listings
+Load data
+```{r}
+btc_price <- read.csv("btc_usd.csv")
+eth_price <- read.csv("eth_usd.csv")
+
+```
+
+
+Technical indicator: Simple Moving Average and Exponential Moving Average
+
 
 ```{r}
-cryptos <- get_crypto_listings(limit = 50)
+
 ```
 
