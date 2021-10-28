@@ -17,33 +17,41 @@ library(quantmod)
 
 
 
-Load data
-```{r}
-btc_price <- read.csv("btc_usd.csv")
-eth_price <- read.csv("eth_usd.csv")
-
-```
-
-
 Using Quantmod
 
 ```{r}
 getSymbols("BTC-USD", from='2016-10-27', to='2021-10-27')
-
 BTC <- na.omit(`BTC-USD`)
 
+getSymbols("ETH-USD", from='2016-10-27', to='2021-10-27')
+ETH <- na.omit(`ETH-USD`)
 
-chartSeries(BTC,
-            subset='2020-10::2021-10',
+getSymbols("HAS", from='2016-10-27', to='2021-10-27')
+getSymbols("T", from='2016-10-27', to='2021-10-27')
+getSymbols("DKNG", from='2016-10-27', to='2021-10-27')
+getSymbols("PLTR", from='2016-10-27', to='2021-10-27')
+getSymbols("ED", from='2016-10-27', to='2021-10-27')
+```
+
+
+Run the following code in the console:
+
+
+
+
+chartSeries(PLTR,
+            subset='last 18 months',
             theme=chartTheme('white')
             )
-addSMA(n=3,on=1,col = "blue")
-addSMA(n=15,on=1,col = "red")
-```
+addEMA(n=3,on=1,col = "blue")
+addEMA(n=15,on=1,col = "red")
+addBBands(n=30,sd=2)
+addMACD(fast=12,slow=26,signal=9,type="EMA")
 
-```{r}
-sma3 <- SMA(Cl(BTC))
 
-tail(sma, 10)
-```
+
+
+
+
+
 
