@@ -12,7 +12,7 @@ options(scipen = 999, digits = 4)
 
 library(tidyverse)
 library(tseries)
-library(TTR)
+library(quantmod)
 ```
 
 
@@ -25,10 +25,25 @@ eth_price <- read.csv("eth_usd.csv")
 ```
 
 
-Technical indicator: Simple Moving Average and Exponential Moving Average
-
+Using Quantmod
 
 ```{r}
+getSymbols("BTC-USD", from='2016-10-27', to='2021-10-27')
 
+BTC <- na.omit(`BTC-USD`)
+
+
+chartSeries(BTC,
+            subset='2020-10::2021-10',
+            theme=chartTheme('white')
+            )
+addSMA(n=3,on=1,col = "blue")
+addSMA(n=15,on=1,col = "red")
+```
+
+```{r}
+sma3 <- SMA(Cl(BTC))
+
+tail(sma, 10)
 ```
 
