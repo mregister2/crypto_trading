@@ -20,17 +20,14 @@ library(quantmod)
 Using Quantmod
 
 ```{r}
-getSymbols("BTC-USD", from='2016-10-27', to='2021-10-27')
+getSymbols("BTC-USD")
 BTC <- na.omit(`BTC-USD`)
 
-getSymbols("ETH-USD", from='2016-10-27', to='2021-10-27')
+getSymbols("ETH-USD")
 ETH <- na.omit(`ETH-USD`)
 
-getSymbols("HAS", from='2016-10-27', to='2021-10-27')
-getSymbols("T", from='2016-10-27', to='2021-10-27')
-getSymbols("DKNG", from='2016-10-27', to='2021-10-27')
-getSymbols("PLTR", from='2016-10-27', to='2021-10-27')
-getSymbols("ED", from='2016-10-27', to='2021-10-27')
+getSymbols("PLTR")
+
 ```
 
 
@@ -39,7 +36,7 @@ Run the following code in the console:
 
 
 
-chartSeries(PLTR,
+chartSeries(AMZN,
             subset='last 18 months',
             theme=chartTheme('white')
             )
