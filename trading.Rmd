@@ -26,8 +26,13 @@ BTC <- na.omit(`BTC-USD`)
 getSymbols("ETH-USD")
 ETH <- na.omit(`ETH-USD`)
 
+getSymbols("T")
+getSymbols("DKNG")
+getSymbols("HAS")
+getSymbols("NNDM")
+getSymbols("BNGO")
 getSymbols("PLTR")
-
+getSymbols("ED")
 ```
 
 
@@ -36,7 +41,7 @@ Run the following code in the console:
 
 
 
-chartSeries(AMZN,
+chartSeries(ED,
             subset='last 18 months',
             theme=chartTheme('white')
             )
@@ -46,6 +51,15 @@ addBBands(n=30,sd=2)
 addMACD(fast=12,slow=26,signal=9,type="EMA")
 
 
+Notes: 11/24
+T is oversold
+BTC/ETH not yet
+DKNG is oversold
+HAS approaching overbought
+NNDM approaching oversold
+BNGO seems fairly priced
+PLTR fairly priced
+ED approaching overbought
 
 
 
