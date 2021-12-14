@@ -33,15 +33,16 @@ getSymbols("NNDM")
 getSymbols("BNGO")
 getSymbols("PLTR")
 getSymbols("ED")
+
 ```
 
 
 Run the following code in the console:
 
+stock <- ED
 
 
-
-chartSeries(ED,
+chartSeries(stock,
             subset='last 18 months',
             theme=chartTheme('white')
             )
@@ -51,7 +52,25 @@ addBBands(n=30,sd=2)
 addMACD(fast=12,slow=26,signal=9,type="EMA")
 
 
-Notes: 11/24
+
+
+Notes: 12/14/21
+BTC - possible buy
+ETH - not yet
+T - oversold; possible buy
+DKNG - oversold; possible buy
+HAS - seems fairly priced but at recent highs
+NNDM/BNGO - speculation plays; do not add more
+PLTR - approaching oversold
+ED - overbought?
+
+Recommendations: Keep an eye on BTC for buying opportunity. Increase investment
+in HAS if looking for quality dividends. Consider T and DKNG if looking to add
+to position to lower cost basis.
+
+
+
+Notes: 11/24/21
 T is oversold
 BTC/ETH not yet
 DKNG is oversold
