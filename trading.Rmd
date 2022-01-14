@@ -39,10 +39,10 @@ getSymbols("ED")
 
 Run the following code in the console:
 
-stock <- ED
+stock <- T
 
 
-chartSeries(stock,
+chartSeries(ETH, TA = NULL,
             subset='last 18 months',
             theme=chartTheme('white')
             )
