@@ -1,6 +1,5 @@
 ##### Compile dividend and price data for a list of stocks
 
-
 library(tidyverse)
 library(tidyquant)
 options(scipen = 999, digits = 2)
@@ -45,6 +44,6 @@ dividend_stocks <- prices %>%
          yield = Dividend/adjusted)
 
 #save as csv
-write_csv(file = "dividend_stocks.csv")
+write_csv(x = dividend_stocks, file = "dividend_stocks_011522.csv")
 
 
