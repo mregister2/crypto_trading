@@ -8,11 +8,11 @@ Create Bitcoin indicators for trading.
 
 Set options and load packages
 ```{r}
-options(scipen = 999, digits = 4)
+options(scipen = 999, digits = 2)
 
 library(tidyverse)
 library(tseries)
-library(quantmod)
+library(tidyquant)
 ```
 
 
@@ -33,6 +33,9 @@ getSymbols("NNDM")
 getSymbols("BNGO")
 getSymbols("PLTR")
 getSymbols("ED")
+getSymbols("O")
+
+getSymbols("DVN")
 
 ```
 
@@ -42,7 +45,7 @@ Run the following code in the console:
 stock <- T
 
 
-chartSeries(ETH, TA = NULL,
+chartSeries(DVN, TA = NULL,
             subset='last 18 months',
             theme=chartTheme('white')
             )
@@ -82,6 +85,47 @@ ED approaching overbought
 
 
 
+Calculate the likelihood of stock rising 10% or more in a 7, 14 and 30 day window based on previous 18 months of daily price history.
+```{r}
+stock <- tq_get("lumn", get = "stock.prices") 
+
+stock <- stock %>%
+  mutate(lag7 = lag(x = stock$adjusted, n = 7),
+         lag14 = lag(x = stock$adjusted, n = 14),
+         lag30 = lag(x = stock$adjusted, n = 30),
+         ror7 = (adjusted - lag7)/lag7 * 100,
+         ror14 = (adjusted - lag14)/lag14 * 100,
+         ror30 = (adjusted - lag30)/lag30 * 100) %>%
+  filter(date >= "2020-07-20")
+
+
+   
+
+mean7 <- mean(stock$ror7)
+sd7 = sd(stock$ror7)
+mean14 = mean(stock$ror14)
+sd14 = sd(stock$ror14)
+mean30 = mean(stock$ror30)
+sd30 = sd(stock$ror30)
+ 
+seven <- tibble(x = rnorm(n = 1000000, mean = mean7, sd = sd7))
+fourteen <- tibble(x = rnorm(n = 1000000, mean = mean14, sd = sd14))
+thirty <- tibble(x = rnorm(n = 1000000, mean = mean30, sd = sd30))
+
+seven <- seven %>%
+  mutate(over = if_else(x >= 10, 1, 0))
+
+fourteen <- fourteen %>%
+  mutate(over = if_else(x >= 10, 1, 0))
+
+thirty <- thirty %>%
+  mutate(over = if_else(x >= 10, 1, 0))
+
+over_pct7 = sum(seven$over)/1000000
+over_pct14 = sum(fourteen$over)/1000000
+over_pct30 = sum(thirty$over)/1000000
+        
+```
 
 
 
