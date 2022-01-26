@@ -34,9 +34,12 @@ getSymbols("BNGO")
 getSymbols("PLTR")
 getSymbols("ED")
 getSymbols("O")
-
+getSymbols("MO")
 getSymbols("DVN")
-
+getSymbols("OLB")
+getSymbols("VTIP")
+getSymbols("VGSH")
+getSymbols("BSV")
 ```
 
 
@@ -45,7 +48,7 @@ Run the following code in the console:
 stock <- T
 
 
-chartSeries(DVN, TA = NULL,
+chartSeries(BSV, TA = NULL,
             subset='last 18 months',
             theme=chartTheme('white')
             )
