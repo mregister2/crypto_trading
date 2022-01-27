@@ -34,21 +34,16 @@ getSymbols("BNGO")
 getSymbols("PLTR")
 getSymbols("ED")
 getSymbols("O")
-getSymbols("MO")
 getSymbols("DVN")
-getSymbols("OLB")
 getSymbols("VTIP")
-getSymbols("VGSH")
 getSymbols("BSV")
 ```
 
 
 Run the following code in the console:
 
-stock <- T
 
-
-chartSeries(BSV, TA = NULL,
+chartSeries(PLTR, TA = NULL,
             subset='last 18 months',
             theme=chartTheme('white')
             )
@@ -60,31 +55,34 @@ addMACD(fast=12,slow=26,signal=9,type="EMA")
 
 
 
-Notes: 12/14/21
-BTC - possible buy
-ETH - not yet
-T - oversold; possible buy
-DKNG - oversold; possible buy
-HAS - seems fairly priced but at recent highs
-NNDM/BNGO - speculation plays; do not add more
-PLTR - approaching oversold
-ED - overbought?
+Notes: 01/27/22
+Crypto:
+BTC - wait another week or two
+ETH - wait another week or two
 
-Recommendations: Keep an eye on BTC for buying opportunity. Increase investment
-in HAS if looking for quality dividends. Consider T and DKNG if looking to add
-to position to lower cost basis.
+Cash equivalents:
+BSV - hold
+VTIP - hold
+
+Income:
+T - hold
+HAS - watch. Could be a buy soon
+ED - hold
+O - hold
+DVN - hold
+
+Speculation
+DKNG - Watch
+NNDM - hold
+BNGO - hold
+PLTR - hold
+
+
+Recommendations: 
+No obvious buys at this time. Looking for good entry points into BTC, ETH, DKNG and HAS.
 
 
 
-Notes: 11/24/21
-T is oversold
-BTC/ETH not yet
-DKNG is oversold
-HAS approaching overbought
-NNDM approaching oversold
-BNGO seems fairly priced
-PLTR fairly priced
-ED approaching overbought
 
 
 
