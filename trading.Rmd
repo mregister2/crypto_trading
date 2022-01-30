@@ -37,13 +37,16 @@ getSymbols("O")
 getSymbols("DVN")
 getSymbols("VTIP")
 getSymbols("BSV")
+
+getSymbols("MAIN")
+getSymbols("SRC")
 ```
 
 
 Run the following code in the console:
 
 
-chartSeries(PLTR, TA = NULL,
+chartSeries(SRC, TA = NULL,
             subset='last 18 months',
             theme=chartTheme('white')
             )

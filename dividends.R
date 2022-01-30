@@ -5,7 +5,7 @@ library(tidyquant)
 options(scipen = 999, digits = 2)
 
 #load list of stocks
-list <- read_csv("list.csv")
+list <- read_csv("list2.csv")
 
 
 #create function to pull stock dividends in the last year
@@ -44,6 +44,6 @@ dividend_stocks <- prices %>%
          yield = Dividend/adjusted)
 
 #save as csv
-write_csv(x = dividend_stocks, file = "dividend_stocks_011522.csv")
+write_csv(x = dividend_stocks, file = "dividend_stocks_013022.csv")
 
 
